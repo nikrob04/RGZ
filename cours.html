@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РГЗ Никитенко ФБИ-21</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <script>
+        function toggleMenu() {
+            console.log("Menu button clicked"); // Диагностическое сообщение
+            var menuPanel = document.getElementById("menuPanel");
+            if (menuPanel) {
+                console.log("Menu panel found"); // Диагностическое сообщение
+                menuPanel.style.display = "block"; // Убедиться, что панель видима
+                menuPanel.classList.toggle("open");
+                console.log("Menu panel class list:", menuPanel.classList); // Диагностическое сообщение
+            } else {
+                console.error("Menu panel not found"); // Сообщение об ошибке, если элемент не найден
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+        fetch('https://www.cbr-xml-daily.ru/daily_json.js')
+            .then(response => response.json())
+            .then(data => {
+                const exchangeRate = data.Valute.UZS.Value;
+                document.getElementById('exchange-rate').textContent = `1 RUB = ${exchangeRate} UZS`;
+                window.currentExchangeRate = exchangeRate;
+            })
+            .catch(error => {
+                console.error('Error fetching exchange rate:', error);
+                document.getElementById('exchange-rate').textContent = 'Не удалось загрузить курс валют.';
+            });
+        });
+
+        function convertToUZS() {
+            const rub = document.getElementById('rub').value;
+            if (rub && window.currentExchangeRate) {
+                const uzs = (rub * window.currentExchangeRate).toFixed(2);
+                document.getElementById('uzs').value = uzs;
+            }
+        }
+
+        function convertToRUB() {
+            const uzs = document.getElementById('uzs').value;
+            if (uzs && window.currentExchangeRate) {
+                const rub = (uzs / window.currentExchangeRate).toFixed(2);
+                document.getElementById('rub').value = rub;
+            }
+        }
+    </script>
+    <style>
+        .smallbox {
+            width: 44%;
+            display: inline-block;
+            background-color: rgb(204, 214, 248, 0.2);
+            margin-left: 2%;
+            padding: 1%;
+            border: 3px solid black;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" style="height: 80px; width: 80px;">
+        <div style="margin-left: 30px;">
+            <a href="mainmenu.html" style="color:white ;text-decoration: none;">ЭНЕРГОБАНК</a>
+        </div>
+    </header>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="menu-panel" id="menuPanel">
+        <a href="mainmenu.html">ГЛАВНАЯ</a>
+        <a href="history.html">ИСТОРИЯ</a>
+        <a href="news.html">НОВОСТИ</a>
+        <a href="cours.html">КУРС ВАЛЮТЫ</a>
+        <a href="map.html">КОНТАКТНЫЕ ДАННЫЕ</a>
+        <a href="video.html">ВИДЕО</a>
+    </div>
+
+    <main>
+        <div>
+            <div>
+                <h2>Курс валют на сегодня</h2>
+                <p id="exchange-rate">Загрузка...</p>
+            </div>
+            <div class="calculator">
+                <h2>Калькулятор валют</h2>
+                <div>
+                    <label for="rub">Рубли:</label>
+                    <input type="number" id="rub" placeholder="Введите сумму в рублях">
+                </div>
+                <div>
+                    <label for="uzs">Узбекский сум:</label>
+                    <input type="number" id="uzs" placeholder="Введите сумму в сумах">
+                </div>
+                <button onclick="convertToUZS()">Конвертировать в UZS</button>
+                <button onclick="convertToRUB()">Конвертировать в RUB</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>ЭНЕРГОБАНК</div>
+        <div style="text-align: right;">Никитенко И.Р. 2024</div>
+    </footer>
+
+
+</body>
+</html>

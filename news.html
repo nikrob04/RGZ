@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РГЗ Никитенко ФБИ-21</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <style>
+        .news-content {
+            display: none; /* Изначально скрываем содержимое новости */
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            max-height: 0;
+        }
+        .news-content.open {
+            display: block;
+            max-height: 1000px; /* Достаточно большое значение для раскрытия контента */
+        }
+        .read-more-btn {
+            display: block;
+            margin: 10px 0;
+            background-color: #11a4da;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleNewsContent(button) {
+            var content = button.previousElementSibling;
+            if (content.classList.contains("open")) {
+                content.classList.remove("open");
+                button.textContent = "Прочитать полностью";
+            } else {
+                content.classList.add("open");
+                button.textContent = "Скрыть";
+            }
+        }
+        function toggleMenu() {
+            console.log("Menu button clicked"); // Диагностическое сообщение
+            var menuPanel = document.getElementById("menuPanel");
+            if (menuPanel) {
+                console.log("Menu panel found"); // Диагностическое сообщение
+                menuPanel.style.display = "block"; // Убедиться, что панель видима
+                menuPanel.classList.toggle("open");
+                console.log("Menu panel class list:", menuPanel.classList); // Диагностическое сообщение
+            } else {
+                console.error("Menu panel not found"); // Сообщение об ошибке, если элемент не найден
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <header>
+        <img src="logo.png" style="height: 80px; width: 80px;">
+        <div style="margin-left: 30px;">
+            <a href="mainmenu.html" style="color:white ;text-decoration: none;">ЭНЕРГОБАНК</a>
+        </div>
+    </header>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="menu-panel" id="menuPanel">
+        <a href="mainmenu.html">ГЛАВНАЯ</a>
+        <a href="history.html">ИСТОРИЯ</a>
+        <a href="news.html">НОВОСТИ</a>
+        <a href="cours.html">КУРС ВАЛЮТЫ</a>
+        <a href="map.html">КОНТАКТНЫЕ ДАННЫЕ</a>
+        <a href="video.html">ВИДЕО</a>
+    </div>
+
+    <main>
+        <h1 style="margin-left: 7%;">НОВОСТИ </h1>
+
+        <div class="boxcon" style="width: 98%; background: white; border: 1px solid gray;">
+           
+            <h2>Получите памятную монету</h2>
+            <p><b>АКБ «Энергобанк»</b> (АО) с 20 мая по 2 июня 2024 года проводит акцию <i>«Монетная неделя»</i></p>
+            <div class="news-content">
+                <p>По условиям акции Вы можете поменять 325 рублей разменной монетой на 300 рублей денежными купюрами и одну 
+                    памятную монету с эмблемой XXII Олимпийских зимних игр <i>"Сочи 2014"номиналом 25 рублей</i>.</p>
+                <p>Подробности акции можно узнать на сайте, в офисах Банка или по телефону Справочной службы <i>8 (800) 350-54-58</i>. 
+                    Звонок по России бесплатный.</p>
+                <div class="date">20 мая 2024</div>
+            </div>
+            <button class="read-more-btn" onclick="toggleNewsContent(this)">Прочитать полностью</button>
+        </div>
+        <div class="boxcon" style="width: 98%; background: white; border: 1px solid gray;">
+           
+            <h2>
+                АКБ «Энергобанк» возобновляет прием заявок по ипотечной программе "Ипотека для IT-специалистов"
+            </h2>
+            <div class="news-content">
+
+                <p><b>Уважаемые клиенты!</b></p>
+                <p><b>АКБ «Энергобанк»</b> возобновляет прием заявок по ипотечной программе <i>"Ипотека для IT-специалистов"</i>.</p>
+                <p>Заявки принимаются в офисах Банка или на сайте</p>
+                <div class="date">11 мая 2024</div>
+            </div>
+            <button class="read-more-btn" onclick="toggleNewsContent(this)">Прочитать полностью</button>
+        </div>
+        <div class="boxcon" style="width: 98%; background: white; border: 1px solid gray;">
+           
+            <h2>
+                Режим работы офисов 9 и 10 мая 2024 года
+            </h2>
+            <div class="news-content">
+                <p><b>Уважаемые клиенты и партнеры, поздравляем Вас с великим праздником - Днем Победы!</b></p>
+                <p>Желаем крепкого здоровья и уверенности в завтрашнем дне! Пусть победа сопутствует во всех Ваших делах.</p>
+                <p>С режимом работы офисов Банка можно ознакомиться <a href="http://surl.li/twjkl">здесь</a></p>
+                <div class="date">08 мая 2024</div>
+            </div>
+            <button class="read-more-btn" onclick="toggleNewsContent(this)">Прочитать полностью</button>
+
+        </div>
+        <div class="boxcon" style="width: 98%; background: white; border: 1px solid gray;">
+           
+            <h2>
+                Приостановлен прием заявок на ипотеку по программе "Новый дом с господдержкой"
+            </h2>
+            <div class="news-content">
+                <p><b>Уважаемые клиенты!</b></p>
+                <p>В связи с пересчетом субсидий, выделяемых на льготное ипотечное кредитование, <br>
+                    временно приостановлен прием заявок на ипотеку по программе <i>"Новый дом с господдержкой".</i> <br>
+                    О предоставлении новых лимитов сообщим дополнительно, следите за новостями!</p>
+                <div class="date">26 апреля 2024</div>
+            </div>
+            <button class="read-more-btn" onclick="toggleNewsContent(this)">Прочитать полностью</button>
+        </div>
+        <div class="boxcon" style="width: 98%; background: white; border: 1px solid gray;">
+           
+            <h2>
+                Кредит для бизнеса на любые цели
+            </h2>
+            <p><b>АКБ «Энергобанк» (АО)</b>запустил новый кредитный продукт "На любые бизнес-цели" для малого, среднего и микробизнеса.</p>
+            <div class="news-content">
+                <p>Кредит станет удобным и доступным финансовым инструментом для предпринимателей, так как по его условиям от заемщика не требуются документы, подтверждающие целевое расходование средств.</p>
+                <p>Все условия кредитной программы «На любые бизнес-цели» можно узнать на сайте, в офисах Банка или по телефону Справочной службы <i>8 (800) 350-54-58</i>. Звонок по России бесплатный.</a></p>
+                <div class="date">17 апреля 2024</div>
+            </div>
+            <button class="read-more-btn" onclick="toggleNewsContent(this)">Прочитать полностью</button>
+        </div>
+
+        <div class="boxcon" style="width: 98%; background: white; border: 1px solid gray;">
+           
+            <h2>
+                Как распознать мошенников
+            </h2>
+            <p><b>Мошенники постоянно придумывают новые уловки</b>
+            <div class="news-content">
+                    чтобы выманить у своих жертв деньги. Поэтому при разговоре с незнакомыми людьми необходимо вести себя осмотрительно.
+                    Предлагаем 4 признака, по которым можно вычислить мошенников.</p>
+                <p>
+                    <ul><b>К Вам обратились сами</b></ul>
+                    <ul><b> Вас пытаются вывести из равновесия</b></ul>
+                    <ul><b>С вами говорят о деньгах или пытаются узнать личные данные</b></ul>
+                    <ul><b> На Вас давят и торопят.</b></ul>
+                </p>
+                <div class="date">28 марта 2024</div>
+            </div>
+            <button class="read-more-btn" onclick="toggleNewsContent(this)">Прочитать полностью</button>
+        </div>
+        <div class="boxcon" style="width: 98%; background: white; border: 1px solid gray;">
+           
+            <h2>Новые изменения в законах
+            </h2>
+            <p><b>Выплата страхового возмещения по вкладам</b></p>
+            <div class="news-content">
+                <p>Заявление о выплате возмещения по вкладам теперь можно будет подать в электронной форме на официальном сайте Агентства по страхованию вкладов или на «Госуслугах». <br>
+                    Вместо указания в заявлении реквизитов банковского счета – предоставить реквизиты карты <i>«Мир»</i>.</p>
+                <p><b>Расширение системы страхования вкладов</b></p>
+                <p>
+                    В систему страхования вкладов включат средние предприятия, социально ориентированные <i>НКО</i> и профсоюзы. Кроме того, <br>
+                    закон распространяет эту систему на банковские счета адвокатов и нотариусов, используемые для профессиональной деятельности.</p>
+                <div class="date">19 марта 2024</div>
+            </div>
+            <button class="read-more-btn" onclick="toggleNewsContent(this)">Прочитать полностью</button>
+        </div>
+        <div class="boxcon" style="width: 98%; background: white; border: 1px solid gray;">
+           
+            <h2>
+                35 лет думаем о каждом
+            </h2>
+            <p><b>Дорогие друзья, сегодня нам исполняется 35 лет!!!</b></p>
+            <div class="news-content">
+                <p>За эти годы была сформирована широкая и высокоэффективная сеть представительств в<b> Республике Татарстан, Республике Башкортостан, Самарской и Ульяновской области</b>. <br>
+                    На сегодняшний день банк насчитывает<b> 26 офисов</b>. На протяжении своей работы <b>АКБ «Энергобанк»</b> выдержал серьезную конкуренцию со стороны федеральных банков, <br>
+                    преодолел несколько экономических кризисов и продолжает развиваться. </p>
+                <div class="date">19 марта 2024</div>
+            </div>
+            <button class="read-more-btn" onclick="toggleNewsContent(this)">Прочитать полностью</button>
+        </div>
+    </main>
+
+
+    <footer>
+        <div>ЭНЕРГОБАНК</div>
+        <div style="text-align: right;">Никитенко И.Р. 2024</div>
+    </footer>
+
+
+</body>
+</html>

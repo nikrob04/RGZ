@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РГЗ Никитенко ФБИ-21</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <script>
+        function toggleMenu() {
+            console.log("Menu button clicked"); // Диагностическое сообщение
+            var menuPanel = document.getElementById("menuPanel");
+            if (menuPanel) {
+                console.log("Menu panel found"); // Диагностическое сообщение
+                menuPanel.style.display = "block"; // Убедиться, что панель видима
+                menuPanel.classList.toggle("open");
+                console.log("Menu panel class list:", menuPanel.classList); // Диагностическое сообщение
+            } else {
+                console.error("Menu panel not found"); // Сообщение об ошибке, если элемент не найден
+            }
+        }
+    </script>
+    <style>
+        .smallbox {
+            width: 44%;
+            display: inline-block;
+            background-color: rgb(204, 214, 248, 0.2);
+            margin-left: 2%;
+            padding: 1%;
+            border: 3px solid black;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" style="height: 80px; width: 80px;">
+        <div style="margin-left: 30px;">
+            <a href="mainmenu.html" style="color:white ;text-decoration: none;">ЭНЕРГОБАНК</a>
+        </div>
+    </header>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="menu-panel" id="menuPanel">
+        <a href="mainmenu.html">ГЛАВНАЯ</a>
+        <a href="history.html">ИСТОРИЯ</a>
+        <a href="news.html">НОВОСТИ</a>
+        <a href="cours.html">КУРС ВАЛЮТЫ</a>
+        <a href="map.html">КОНТАКТНЫЕ ДАННЫЕ</a>
+        <a href="video.html">ВИДЕО</a>
+    </div>
+
+    <main>
+        
+        <div class="boxcon" style="display: flex; width: 99%; background: none;">
+            <div class="smallbox">   
+                <div style="position:relative;overflow:hidden; padding-left: 6%;"><a href="https://yandex.ru/maps/org/energobank/71781099400/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Энергобанк</a><a href="https://yandex.ru/maps/195/ulyanovsk/category/bank/184105398/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Банк в Ульяновске</a><a href="https://yandex.ru/maps/195/ulyanovsk/category/mortgage_agency/184107517/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Ипотечное агентство в Ульяновске</a><iframe src="https://yandex.ru/map-widget/v1/?ll=49.018369%2C53.962888&mode=search&oid=71781099400&ol=biz&sctx=ZAAAAAgBEAAaKAoSCXcQO1PoulRAEZuvko%2Fdg0tAEhIJ7gc8MIDw1j8R9katMH2vvT8iBgABAgMEBSgKOABAKEgBYh5yZWxldl9zZXJ2aWNlX2FyZWFfcGVyY2VudD0xMDBqAnJ1nQHNzEw9oAEAqAEAvQGGAHzCwgELiM%2Fys4sCpZibsgSCAhTRjdC90LXRgNCz0L7QsdCw0L3QuooCAJICAJoCDGRlc2t0b3AtbWFwc6oCFTI1NzUxODI3MTAsNDM4OTg2MDExMrACAQ%3D%3D&sll=49.018369%2C53.962888&sspn=3.382700%2C1.777176&text=%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D0%B1%D0%B0%D0%BD%D0%BA&z=8.1" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+            </div>
+            <div class="smallbox" style="color: rgb(3, 3, 113);">   
+                <p><h1>Сведения о банке</h1></p>
+                <p><h2>Полное наименование Банка:</h2></p>
+                <p>Акционерный коммерческий банк «Энергобанк» (акционерное общество)</p>
+                <p><h2>Сокращенное наименование Банка:</h2></p>
+                <p>АКБ «Энергобанк» (АО)</p>
+                <p><h2>Наименование Банка на английском языке:</h2></p>
+                <p>JSCB «Energobank»</p>
+                <p><h2>Номер телефона</h2></p>
+                <p><i>8 800-350-54-58</i></p>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div>ЭНЕРГОБАНК</div>
+        <div style="text-align: right;">Никитенко И.Р. 2024</div>
+    </footer>
+
+
+</body>
+</html>

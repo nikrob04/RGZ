@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РГЗ Никитенко ФБИ-21</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <script>
+        function toggleMenu() {
+            console.log("Menu button clicked"); // Диагностическое сообщение
+            var menuPanel = document.getElementById("menuPanel");
+            if (menuPanel) {
+                console.log("Menu panel found"); // Диагностическое сообщение
+                menuPanel.style.display = "block"; // Убедиться, что панель видима
+                menuPanel.classList.toggle("open");
+                console.log("Menu panel class list:", menuPanel.classList); // Диагностическое сообщение
+            } else {
+                console.error("Menu panel not found"); // Сообщение об ошибке, если элемент не найден
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" style="height: 80px; width: 80px;"> <div style="margin-left: 30px;"> <a href="mainmenu.html" style="color:white ;text-decoration: none;">ЭНЕРГОБАНК</a></div>
+    </header>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="menu-panel" id="menuPanel">
+        <a href="mainmenu.html">ГЛАВНАЯ</a>
+        <a href="history.html">ИСТОРИЯ</a>
+        <a href="news.html">НОВОСТИ</a>
+        <a href="cours.html">КУРС ВАЛЮТЫ</a>
+        <a href="map.html">КОНТАКТНЫЕ ДАННЫЕ</a>
+        <a href="video.html">ВИДЕО</a>
+    </div>
+    <main>
+        <h1><b>История</b></h1>
+        <div class="history">
+            <div class="box">
+                <b>1989 ГОД</b><br>
+                2 МАРТА
+                Государственным Банком СССР зарегистрирован Татарский коммерческий банк <i>«Таткомбанк»</i> в форме паевого банка с уставным капиталом в размере 6 млн. руб.
+            </div>
+            <div class="box">
+                <b>1991 ГОД</b><br>
+                Таткомбанк перерегистрирован Банком России. Выдана внутренняя лицензия № 67 на совершение банковских операций в иностранной валюте
+            </div>
+            <div class="box">
+                <b>1993 ГОД</b><br>
+                5 мая 1993г. на собрании пайщиков принято решение о переименовании Таткомбанка в коммерческий банк «Энергобанк»
+            </div>
+            <div class="box">
+                <b>1998 ГОД</b><br>
+                КБ «Энергобанк» становится участником Казанского Совета фондовой торговли КСФТ (15.06.1998г.)
+                Банк благополучно преодолел российский экономический кризис, не допустив ни одной задержки клиентских платежей и расширив свою клиентскую базу.
+                Собственные средства банка за год выросли в 2 раза с 8,7 млн.руб. до 17,2 млн.руб.
+            </div>
+            <div class="box">
+                <b>2001 ГОД</b><br>
+                Подписано агентское соглашение о распространении карт международных платежных систем <i>MasterCard, VISA</i>; установлены первые устройства для получения денежной наличности по пластиковым картам. 
+            </div>
+            <div class="box">
+                <b>2021 ГОД</b><br>
+                По данным аналитического портала КУАП.ру, АКБ «Энергобанк»(АО) занимает 37 место по рентабельности капитала и 25 место по рентабельности активов среди российских кредитных организаций.
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>ЭНЕРГОБАНК</div> <div style="text-align: right;">Никитенко И.Р. 2024</div>
+    </footer>
+</body>
+</html>

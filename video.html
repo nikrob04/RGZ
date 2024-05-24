@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РГЗ Никитенко ФБИ-21</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <script>
+        function toggleMenu() {
+            console.log("Menu button clicked"); // Диагностическое сообщение
+            var menuPanel = document.getElementById("menuPanel");
+            if (menuPanel) {
+                console.log("Menu panel found"); // Диагностическое сообщение
+                menuPanel.style.display = "block"; // Убедиться, что панель видима
+                menuPanel.classList.toggle("open");
+                console.log("Menu panel class list:", menuPanel.classList); // Диагностическое сообщение
+            } else {
+                console.error("Menu panel not found"); // Сообщение об ошибке, если элемент не найден
+            }
+        }
+    </script>
+    <style>
+        .smallbox {
+            width: 44%;
+            display: inline-block;
+            background-color: rgb(204, 214, 248, 0.2);
+            margin-left: 2%;
+            padding: 1%;
+            border: 3px solid black;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" style="height: 80px; width: 80px;">
+        <div style="margin-left: 30px;">
+            <a href="mainmenu.html" style="color:white ;text-decoration: none;">ЭНЕРГОБАНК</a>
+        </div>
+    </header>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="menu-panel" id="menuPanel">
+        <a href="mainmenu.html">ГЛАВНАЯ</a>
+        <a href="history.html">ИСТОРИЯ</a>
+        <a href="news.html">НОВОСТИ</a>
+        <a href="cours.html">КУРС ВАЛЮТЫ</a>
+        <a href="map.html">КОНТАКТНЫЕ ДАННЫЕ</a>
+        <a href="video.html">ВИДЕО</a>
+    </div>
+
+    <main>
+        <div style="display: flex;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/I_QoBhdDuQM?si=hMpQro8n0FPqhPXH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div style="padding-left: 3%;">
+                <h1 style="font-size: 60px;">КАК ПОПАСТЬ В <br>ЛИЧНЫЙ КАБИНЕТ</h1>
+                
+            </div>
+        </div>  
+    </main>
+
+    <footer>
+        <div>ЭНЕРГОБАНК</div>
+        <div style="text-align: right;">Никитенко И.Р. 2024</div>
+    </footer>
+
+
+</body>
+</html>
