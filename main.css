@@ -1,92 +1,87 @@
-/* Основные стили страницы */
+
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Arial'; /* Шрифт Arial для всей страницы */
-    background-color: #f4f4f4; /* Светло-серый фон для всей страницы */
+    font-family: 'Arial';
+    background-color: #f4f4f4;
 }
 
 /* Стили для фиксированного верхнего меню */
 header {
     background: linear-gradient(to bottom, #11a4da, #102b5e);
-    color: white; /* Белый цвет текста */
-    padding: 10px 20px; /* Внутренние отступы */
-    width: 100%; /* Ширина на всю страницу */
-    position: fixed; /* Фиксация на верху страницы */
-    top: 0; /* Расположение в самом верху */
-    left: 0; /* Расположение слева */
-    z-index: 1000; /* Элемент будет наверху всех других */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Тень под меню */
-    display: flex; /* Использование flexbox для выравнивания */
-    align-items: center; /* Выравнивание элементов по вертикали */
-    height: 60px; /* Фиксированная высота */
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    height: 60px;
 }
 
 /* Отступ для тела страницы, чтобы верхнее меню не перекрывало контент */
 body {
-    padding-top: 75px; /* Отступ сверху, зависит от высоты вашего меню */
+    padding-top: 75px;
 }
 
-/* Стили для основного контента */
 main {
     padding: 20px;
-    background-color: #ffffff; /* Белый фон для контента */
-    margin: 10px; /* Отступы вокруг контента */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Тень вокруг блоков контента */
+    background-color: #ffffff;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Стили для подвала */
+
 footer {
-    background-color: #333333; /* Темно-серый цвет фона */
-    color: #ffffff; /* Белый цвет текста */
-    text-align: center; /* Выравнивание текста по центру */
-    padding: 10px 0; /* Вертикальные отступы */
-    position: relative; /* Обычное позиционирование */
-    bottom: 0; /* Расположение внизу */
-    width: 100%; /* Ширина на всю страницу */
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Ссылки в подвале */
-footer a {
-    color: #ffffff; /* Цвет ссылок */
-    text-decoration: none; /* Убрать подчеркивание у ссылок */
-    margin: 0 10px; /* Отступы между ссылками */
-}
 
 .box {
     background: linear-gradient(to bottom, #0b6b8e, #0a60ff);
-    color: #f9e6e6; /* Цвет текста */
-    border: 3px solid #053547; /* Толщина и цвет рамки */
-    border-radius: 5px; /* Скругление углов */
-    margin: 4px; /* Отступы вокруг блоков */
+    color: #f9e6e6;
+    border: 3px solid #053547;
+    border-radius: 5px;
+    margin: 4px;
     width: calc(32.2% - 9px); /* Ширина блока с учетом маржина */
-    padding: 5px; /* Внутренние отступы */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавность перехода анимации */
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2); /* Начальная тень */
-    
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 }
+
 .boxcon {
     font-size: medium;
     background: linear-gradient(to bottom, #f1f2f2, #d5e2fb);
-    color: black; /* Цвет текста */
-    border: 3px solid #053547; /* Толщина и цвет рамки */
-    border-radius: 5px; /* Скругление углов */
-    margin: 4px; /* Отступы вокруг блоков */
-    width: calc(65%); /* Ширина блока с учетом маржина */
-    padding: 5px; /* Внутренние отступы */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавность перехода анимации */
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2); /* Начальная тень */
-    
+    color: black;
+    border: 3px solid #053547;
+    border-radius: 5px;
+    margin: 4px;
+    width: calc(65%);
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 }
+
 .box:hover {
     transform: scale(1.05); /* Увеличение размера блока */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Увеличенная тень при наведении */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
 .history {
-    display: flex; /* Использование Flexbox */
-    flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
-    justify-content: flex-start; /* Выравнивание элементов по левому краю */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
+
 .menu-icon {
     position: fixed;
     top: 20px;
@@ -106,21 +101,20 @@ footer a {
 
 .menu-panel {
     position: fixed;
-    top: 60px; /* Отступ сверху, чтобы панель не перекрывалась шапкой */
-    right: -300px; /* Изначально скрыта за правым краем */
+    top: 60px;
+    right: -300px;
     width: 200px;
-    height: calc(100% - 60px); /* Уменьшение высоты панели на высоту шапки */
+    height: calc(100% - 60px);
     background-color: white;
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
     z-index: 999;
     padding: 20px;
-    overflow-y: auto; /* Добавление прокрутки, если меню будет длиннее видимой области */
+    overflow-y: auto;
     transition: right 0.3s ease; /* Плавный переход для выезда */
 }
 
 .menu-panel.open {
-    right: 0; 
-    
+    right: 0;
 }
 
 .menu-panel a {
@@ -130,14 +124,17 @@ footer a {
     color: black;
     transition: color 0.6s ease;
 }
+
 .menu-panel a:hover {
-    color: #00008B; 
+    color: #00008B;
 }
+
 .menu-panel a:active {
-    color: #000066; 
+    color: #000066;
 }
+
 .news-content {
-    display: none; 
+    display: none;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     max-height: 0;
@@ -145,7 +142,6 @@ footer a {
 
 .news-content.open {
     display: block;
-    
 }
 
 .read-more-btn {

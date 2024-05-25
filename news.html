@@ -10,14 +10,14 @@
     <link rel="icon" href="favicon-32x32.png">
     <style>
         .news-content {
-            display: none; /* Изначально скрываем содержимое новости */
+            display: none; /*  скрывает содержимое новости */
             overflow: hidden;
             transition: max-height 0.3s ease-out;
             max-height: 0;
         }
         .news-content.open {
             display: block;
-            max-height: 1000px; /* Достаточно большое значение для раскрытия контента */
+            max-height: 1000px; 
         }
         .read-more-btn {
             display: block;
@@ -42,16 +42,9 @@
             }
         }
         function toggleMenu() {
-            console.log("Menu button clicked"); // Диагностическое сообщение
             var menuPanel = document.getElementById("menuPanel");
-            if (menuPanel) {
-                console.log("Menu panel found"); // Диагностическое сообщение
-                menuPanel.style.display = "block"; // Убедиться, что панель видима
-                menuPanel.classList.toggle("open");
-                console.log("Menu panel class list:", menuPanel.classList); // Диагностическое сообщение
-            } else {
-                console.error("Menu panel not found"); // Сообщение об ошибке, если элемент не найден
-            }
+            menuPanel.style.display = "block"; 
+            menuPanel.classList.toggle("open");
         }
     </script>
     
