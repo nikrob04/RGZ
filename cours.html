@@ -9,32 +9,29 @@
     <link rel="icon" href="favicon-16x16.png">
     <link rel="icon" href="favicon-32x32.png">
     <script>
+        // Функция для переключения отображения меню
         function toggleMenu() {
-            console.log("Menu button clicked"); // Диагностическое сообщение
             var menuPanel = document.getElementById("menuPanel");
-            if (menuPanel) {
-                console.log("Menu panel found"); // Диагностическое сообщение
-                menuPanel.style.display = "block"; // Убедиться, что панель видима
-                menuPanel.classList.toggle("open");
-                console.log("Menu panel class list:", menuPanel.classList); // Диагностическое сообщение
-            } else {
-                console.error("Menu panel not found"); // Сообщение об ошибке, если элемент не найден
-            }
+            menuPanel.style.display = "block"; 
+            menuPanel.classList.toggle("open");
         }
+        // Выполняется при загрузке документа
         document.addEventListener('DOMContentLoaded', function () {
         fetch('https://www.cbr-xml-daily.ru/daily_json.js')
-            .then(response => response.json())
+            .then(response => response.json()) // Когда ответ успешно получен, преобразуем его в JSON
             .then(data => {
+                // Получаем курс валюты UZS к RUB и обновляем элемент на странице
                 const exchangeRate = data.Valute.UZS.Value;
                 document.getElementById('exchange-rate').textContent = `1 RUB = ${exchangeRate} UZS`;
                 window.currentExchangeRate = exchangeRate;
             })
+
             .catch(error => {
                 console.error('Error fetching exchange rate:', error);
                 document.getElementById('exchange-rate').textContent = 'Не удалось загрузить курс валют.';
             });
         });
-
+            // Функция для конвертации из RUB в UZS
         function convertToUZS() {
             const rub = document.getElementById('rub').value;
             if (rub && window.currentExchangeRate) {
@@ -42,7 +39,7 @@
                 document.getElementById('uzs').value = uzs;
             }
         }
-
+// Функция для конвертации из UZS в RUB
         function convertToRUB() {
             const uzs = document.getElementById('uzs').value;
             if (uzs && window.currentExchangeRate) {
